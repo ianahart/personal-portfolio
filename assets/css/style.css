@@ -149,7 +149,73 @@ header .banner img {
   background-color: var(--primary-color);
 }
 
+/*set a max container width for main*/
+main {
+  max-width: 992px;
+  margin: 5% auto;
+  padding: 0.5%;
+}
 
+/* set article as a flex container row*/
+.about article {
+  display: flex;
+  flex-direction: row;
+}
+
+/*
+* give the section a left border and make it take up to 2 times the remaining space after it has been distributed
+*/
+.about article section {
+  flex-grow: 2;
+  border-left: 5px solid var(--primary-color);
+  padding: 2%;
+  margin-left: 1%;
+}
+
+
+/*
+style article header accordingly
+*/
+.about article h3 {
+  font-size: 400%;
+  color: var(--secondary-color);
+  text-align: right;
+}
+
+
+/*
+format the about paragraphs
+*/
+.about article section p {
+  line-height: 1.5;
+  font-size: 150%;
+  margin: 1.5% 0;
+}
+
+
+@media screen and (max-width: 768px) {
+
+  /*
+  * set article content to stack vertically on the y axis
+  */
+  .about article {
+    flex-direction: column;
+  }
+
+  /*
+  * align the h3 heading to the center
+  */
+  .about article h3 {
+    text-align: center;
+  }
+
+  /*
+  *remove section left border
+  */
+  .about article section {
+    border-left: none;
+  }
+}
 
 @media screen and (max-width: 576px) {
 
