@@ -13,7 +13,147 @@ html {
   font-size: 62.5%;
 }
 
+/*
+* set site wide font
+*/
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/*
+* put space between the site heading and the navbar
+*/
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-color);
+  padding: 0.5%;
+}
+
+/*
+make the heading and avatar container a flex container
+*/
+header section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/*
+* style the main heading of the website
+*/
+header section h1 {
+  font-size: 400%;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  margin-right: 1%;
+  padding-left: 5%;
+  padding-right: 1%;
+}
+
+/*
+* make heading avatar round
+*/
+header section img {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+
+/*
+* have the navbar take up twice as much space when there is remaining space left over
+*/
+header nav {
+  margin-right: 5%;
+  flex-grow: 2;
+  width: 100%;
+}
+
+/*
+* make the nav list a row and push it all the way right on the page
+*/
+header nav ul {
+  flex-direction: row;
+  display: flex;
+  margin-right: 5%;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+
+/*
+* set a transition for nav list item background color
+*/
+header nav ul li {
+  margin: 1%;
+  transition: background-color 0.25s ease-in-out;
+  padding: 1%;
+}
+
+/*
+* when nav list item is hovered background-color will transition over 0.25s seconds
+*/
+header nav ul li:hover {
+  background-color: var(--primary-color);
+  color: var(--light);
+}
+
+/*
+* set a transition for nav lsit item links color
+*/
+header nav ul li a {
+  color: var(--primary-color);
+  font-size: 150%;
+  transition: color 0.25s ease-in-out;
+}
+
+/*
+* change color of nav list item link on hover
+*/
+header nav ul li a:hover {
+  color: var(--light);
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+  /*
+  * stack header flex-items vertically on the y axis
+  */
+  header {
+    flex-direction: column;
+  }
+
+  /*
+  * stack heading and avatar vertically on the y axis and center on the x axis
+  */
+  header section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /*
+  set a bit of margin on top for avatar
+  */
+  header section img {
+    margin-top: 1%;
+  }
+
+  /*
+  * stack nav ul flex-items vertically on the y axis
+  */
+  header nav ul {
+    flex-direction: column;
+  }
+
+  /*
+  * remove the text decoration on the nav links
+  */
+  header nav ul li a {
+    text-decoration: none;
+  }
+}
