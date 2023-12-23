@@ -1,0 +1,19 @@
+:root {
+  --light: #fff;
+  --dark: #67717d;
+  --primary-color: #add8e6;
+  --secondary-color: #343a40;
+  --line-height: 1.5;
+}
+
+/*
+* 62.5% of 16px browser font size is 10px
+*/
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
