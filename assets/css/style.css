@@ -23,7 +23,7 @@ body {
 /*
 * put space between the site heading and the navbar
 */
-header {
+.header-container {
   display: flex;
   justify-content: space-between;
   background-color: var(--secondary-color);
@@ -115,6 +115,38 @@ header nav ul li a {
 */
 header nav ul li a:hover {
   color: var(--light);
+}
+
+
+/*
+* set position relative so can position the absolute subtitle
+*/
+header .banner {
+  position: relative;
+  width: 100%;
+  background-color: var(--secondary-color);
+}
+
+/*
+ give the banner a minimum height and a full width
+*/
+header .banner img {
+  width: 100%;
+  border-radius: 0;
+  min-height: 250px;
+}
+
+/*
+* position subtitle to the bottom right of banner
+*/
+.subtitle {
+  position: absolute;
+  bottom: 10%;
+  padding: 1%;
+  font-size: 175%;
+  right: 10%;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 
 
