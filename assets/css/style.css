@@ -157,7 +157,8 @@ main {
 }
 
 /* set article as a flex container row*/
-.about article {
+.about article,
+.work article {
   display: flex;
   flex-direction: row;
 }
@@ -165,7 +166,8 @@ main {
 /*
 * give the section a left border and make it take up to 2 times the remaining space after it has been distributed
 */
-.about article section {
+.about article section,
+.work article .projects {
   flex-grow: 2;
   border-left: 5px solid var(--primary-color);
   padding: 2%;
@@ -176,10 +178,12 @@ main {
 /*
 style article header accordingly
 */
-.about article h3 {
+.about article h3,
+.work article h3 {
   font-size: 400%;
   color: var(--secondary-color);
   text-align: right;
+      flex: 1 0 150px;
 }
 
 
@@ -192,27 +196,118 @@ format the about paragraphs
   margin: 1.5% 0;
 }
 
+/*
+add space between portfolio sections
+*/
+.spacer {
+  margin: 5% 0;
+}
+
+
+/*
+* set position relative to move project titles on top of project image
+*/
+.work .main-project-image-container,
+.work .project-image-container {
+  position: relative;
+  border: 5px solid var(--primary-color);
+  overflow: hidden;
+}
+
+/*
+make image full width and set aspect raio
+*/
+.work .main-project-image-container img,
+.work .project-image-container img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  transition: all 0.25s ease-in-out;
+}
+
+.work .main-project-image-container img:hover,
+.work .project-image-container img:hover {
+  transform: scale(1.2);
+}
+
+/*
+position project title bottom left on project image
+*/
+.work .project-title {
+  display: inline-block;
+  background: var(--primary-color);
+  padding: 2%;
+  color: var(--secondary-color);
+  position: absolute;
+  z-index: 1;
+  bottom: 10%;
+  left: 0;
+}
+
+.work .project-title h4,
+.work .project-title p {
+  color: var(--secondary-color);
+}
+
+.work .project-title h4 {
+   font-size: 200%;
+}
+
+.work .project-title p {
+  margin-top: 2%;
+  font-size: 125%;
+}
+
+/*
+ set projects showcase to a flex container and have it wrap
+*/
+.showcase {
+  margin: 0 auto;
+  margin-top: 1.4%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+
+/*
+* set width to half so two projects will be displayed in a row when the parent is 100%
+*/
+.showcase .project-image-container {
+  width: 49%;
+  margin: 0.5%;
+}
+
+/*
+make project image take up 100% of its parent container
+*/
+.showcase .project-image-container img {
+  width: 100%;
+}
+
 
 @media screen and (max-width: 768px) {
 
   /*
   * set article content to stack vertically on the y axis
   */
-  .about article {
+  .about article,
+  .work article {
     flex-direction: column;
   }
 
   /*
   * align the h3 heading to the center
   */
-  .about article h3 {
+  .about article h3,
+  .work article h3 {
     text-align: center;
   }
 
   /*
   *remove section left border
   */
-  .about article section {
+  .about article section,
+  .work article .projects {
     border-left: none;
   }
 }
@@ -246,6 +341,7 @@ format the about paragraphs
   */
   header nav ul {
     flex-direction: column;
+    margin: 0;
   }
 
   /*
@@ -253,5 +349,12 @@ format the about paragraphs
   */
   header nav ul li a {
     text-decoration: none;
+  }
+
+  /*
+  * set project images to 100% so they will display on their own line
+  */
+  .showcase .project-image-container {
+    width: 100%;
   }
 }
