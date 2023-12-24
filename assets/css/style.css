@@ -158,7 +158,8 @@ main {
 
 /* set article as a flex container row*/
 .about article,
-.work article {
+.work article,
+.contact article {
   display: flex;
   flex-direction: row;
 }
@@ -167,7 +168,8 @@ main {
 * give the section a left border and make it take up to 2 times the remaining space after it has been distributed
 */
 .about article section,
-.work article .projects {
+.work article .projects,
+.contact article section {
   flex-grow: 2;
   border-left: 5px solid var(--primary-color);
   padding: 2%;
@@ -179,11 +181,12 @@ main {
 style article header accordingly
 */
 .about article h3,
-.work article h3 {
+.work article h3,
+.contact article h3 {
   font-size: 400%;
   color: var(--secondary-color);
   text-align: right;
-      flex: 1 0 150px;
+      flex: 1 0 170px;
 }
 
 
@@ -273,8 +276,23 @@ position project title bottom left on project image
 * set width to half so two projects will be displayed in a row when the parent is 100%
 */
 .showcase .project-image-container {
-  width: 49%;
-  margin: 0.5%;
+  width: 49.5%;
+  margin: 0.5% 0;
+}
+
+
+/*
+* give even projects left margin to make showcase flush with main project
+*/
+.showcase .project-image-container:nth-child(even) {
+  margin-left: 0.5%;
+}
+
+/*
+give odd projects right margin to make showcase flush with main project
+*/
+.showcase .project-image-container:nth-child(odd) {
+  margin-right: 0.5%;
 }
 
 /*
@@ -284,6 +302,43 @@ make project image take up 100% of its parent container
   width: 100%;
 }
 
+.contact section {
+  width: 100%;
+}
+
+/*
+* space out contact information and socials horizontally
+*/
+.contact section ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*
+* set styles on contact list item
+*/
+.contact section ul li {
+  border-bottom: 3px solid var(--primary-color);
+  font-size: 125%;
+  color: var(--secondary-color);
+}
+
+/*
+bold social links
+*/
+.contact section ul li a {
+   color: var(--primary-color);
+   font-weight: bold;
+}
+
+/*
+change opacity to slightly more light on hover
+*/
+.contact section ul li a:hover {
+  opacity: 0.8;
+}
+
+
 
 @media screen and (max-width: 768px) {
 
@@ -291,7 +346,8 @@ make project image take up 100% of its parent container
   * set article content to stack vertically on the y axis
   */
   .about article,
-  .work article {
+  .work article,
+  .contact article {
     flex-direction: column;
   }
 
@@ -299,7 +355,8 @@ make project image take up 100% of its parent container
   * align the h3 heading to the center
   */
   .about article h3,
-  .work article h3 {
+  .work article h3,
+  .contact article h3 {
     text-align: center;
   }
 
@@ -307,8 +364,13 @@ make project image take up 100% of its parent container
   *remove section left border
   */
   .about article section,
-  .work article .projects {
+  .work article .projects,
+  .contact article section {
     border-left: none;
+  }
+
+  .contact article section {
+    margin: 0;
   }
 }
 
@@ -356,5 +418,22 @@ make project image take up 100% of its parent container
   */
   .showcase .project-image-container {
     width: 100%;
+  }
+
+  .showcase .project-image-container:nth-child(even),
+  .showcase .project-image-container:nth-child(odd) {
+    margin: 0.5% 0;
+  }
+
+  /*
+  * stack contact information vertically on the y axis
+  */
+  .contact section ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact section ul li {
+    margin: 1%;
   }
 }
