@@ -338,7 +338,16 @@ change opacity to slightly more light on hover
   opacity: 0.8;
 }
 
+footer {
+  display: flex;
+  justify-content: center;
+}
 
+footer p {
+  font-size: 125%;
+  color: var(--secondary-color);
+  margin: 1.5%;
+}
 
 @media screen and (max-width: 768px) {
 
