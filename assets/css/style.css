@@ -97,7 +97,6 @@ header nav ul li {
 * when nav list item is hovered background-color will transition over 0.25s seconds
 */
 header nav ul li:hover {
-  background-color: var(--primary-color);
   color: var(--light);
 }
 
@@ -115,6 +114,7 @@ header nav ul li a {
 */
 header nav ul li a:hover {
   color: var(--light);
+  background-color: var(--primary-color);
 }
 
 
@@ -398,7 +398,7 @@ footer p {
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 583px) {
 
   /*
   * stack header flex-items vertically on the y axis
@@ -421,6 +421,14 @@ footer p {
   header section img {
     margin-top: 1%;
   }
+
+
+ /*
+  *remove margin from nav
+ */
+ header nav {
+  margin: 0;
+ }
 
   /*
   * stack nav ul flex-items vertically on the y axis
